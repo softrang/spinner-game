@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+
+.main {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 20px;
+}
+
+
+.wheel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+  background: #fff;
+}
+
+
+.pointer {
+  width: 20px;
+  height: 35px;
+  background-color: #d32f2f;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-180deg);
+  z-index: 1000;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.middle {
+  width: 50px;
+  height: 50px;
+  background-color: #d32f2f;
+  border-radius: 50%;
+  position: absolute;
+  top: 52%;
+  left: 52%;
+  transform: translate(-48%, -48%);
+  z-index: 1000;
+}
+
+.segment {
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  top: 25%;
+  left: 15%;
+  transform-origin: 100% 100%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.segment i:nth-child(1) {
+  transform: rotate(-60deg) translateX(-130%) translateY(80%);
+  font-style: normal;
+}
+
+
+button {
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 201, 255, 0.4);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+
+#result {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #444;
+}
+
+#points {
+  font-weight: bold;
+  color: #d32f2f;
+  font-size: 20px;
+  margin-top: 10px;
+}
