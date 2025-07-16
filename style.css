@@ -10,7 +10,6 @@ body {
   justify-content: center;
 }
 
-
 .container {
   background: #fff;
   padding: 30px;
@@ -26,14 +25,12 @@ h1 {
   font-size: 28px;
 }
 
-
 .main {
   position: relative;
   width: 300px;
   height: 300px;
   margin: 0 auto 20px;
 }
-
 
 .wheel {
   position: relative;
@@ -43,21 +40,39 @@ h1 {
   border: 8px solid #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
   background: #fff;
+  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
+.pointer,
+.pointer-x {
+  position: absolute;
+  left: 52.5%;
+  transform: translateX(-47%);
+  z-index: 1000;
+}
 
 .pointer {
   width: 20px;
   height: 35px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
   background-color: #d32f2f;
-  position: absolute;
-  top: 2%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-180deg);
-  z-index: 1000;
+  top: 0;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateX(-47%) rotate(-180deg);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.pointer-x {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 80%;
+  z-index: 1010;
+  transform: translateX(-47%) rotate(180deg);
 }
 
 .middle {
@@ -70,6 +85,12 @@ h1 {
   left: 52%;
   transform: translate(-48%, -48%);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .segment {
@@ -79,40 +100,21 @@ h1 {
   top: 25%;
   left: 15%;
   transform-origin: 100% 100%;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(4% 0%, 0% 100%, 100% 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #fff;
   font-size: 20px;
+  color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-
 .segment i:nth-child(1) {
-  transform: rotate(-60deg) translateX(-130%) translateY(80%);
+  transform: rotate(286deg) translateX(-170%) translateY(50%);
   font-style: normal;
 }
 
-
-button {
-  padding: 14px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  background: linear-gradient(135deg, #00c9ff, #92fe9d);
-  border: none;
-  color: #fff;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 201, 255, 0.4);
-}
-
-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #36d1dc, #5b86e5);
-}
 
 
 #result {
